@@ -84,7 +84,7 @@ $settings = array (
         'singleSignOnService' => array (
             // URL Target of the IdP where the SP will send the Authentication Request Message
             'url' => '',
-            'destination_url' => '',
+            'destinationUrl' => '',
             // SAML protocol binding to be used when returning the <Response>
             // message.  SAML Toolkit supports for this endpoint the
             // HTTP-Redirect binding only
@@ -94,7 +94,7 @@ $settings = array (
         'singleLogoutService' => array (
             // URL Location of the IdP where the SP will send the SLO Request
             'url' => '',
-            'destination_url' => '',
+            'destinationUrl' => '',
             // URL location of the IdP where the SP will send the SLO Response (ResponseLocation)
             // if not set, url for the SLO Request will be used
             'responseUrl' => '',
