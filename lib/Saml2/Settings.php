@@ -851,6 +851,20 @@ class OneLogin_Saml2_Settings
         }
         return $ssoUrl;
     }
+    
+    /**
+     * Gets the IdP SSO destination url.
+     *
+     * @return string|null The destination url of the IdP Single Sign On Service
+     */
+    public function getIdPSSODestinationUrl()
+    {
+        $ssoDestinationUrl = null;
+        if (isset($this->_idp['singleSignOnService']) && isset($this->_idp['singleSignOnService']['destination'])) {
+            $ssoDestinationUrl = $this->_idp['singleSignOnService']['destination'];
+        }
+        return $ssoDestinationUrl;
+    }
 
     /**
      * Gets the IdP SLO url.
@@ -864,6 +878,20 @@ class OneLogin_Saml2_Settings
             $sloUrl = $this->_idp['singleLogoutService']['url'];
         }
         return $sloUrl;
+    }
+    
+    /**
+     * Gets the IdP SLO destination url.
+     *
+     * @return string|null The request destination url of the IdP Single Logout Service
+     */
+    public function getIdPSLODestinationUrl()
+    {
+        $sloDestinationUrl = null;
+        if (isset($this->_idp['singleLogoutService']) && isset($this->_idp['singleLogoutService']['destination'])) {
+            $sloDestinationUrl = $this->_idp['singleLogoutService']['destination'];
+        }
+        return $sloDestinationUrl;
     }
 
     /**
