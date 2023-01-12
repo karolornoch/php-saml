@@ -853,7 +853,7 @@ class Settings
     {
         $ssoDestinationUrl = null;
         if (isset($this->_idp['singleSignOnService']) && isset($this->_idp['singleSignOnService']['destinationUrl'])) {
-            $ssoUrl = $this->_idp['singleSignOnService']['destinationUrl'];
+            $ssoDestinationUrl = $this->_idp['singleSignOnService']['destinationUrl'];
         }
         return $ssoDestinationUrl;
     }
@@ -881,7 +881,7 @@ class Settings
     {
         $sloDestinationUrl = null;
         if (isset($this->_idp['singleLogoutService']) && isset($this->_idp['singleLogoutService']['destinationUrl'])) {
-            $sloUrl = $this->_idp['singleLogoutService']['destinationUrl'];
+            $sloDestinationUrl = $this->_idp['singleLogoutService']['destinationUrl'];
         }
         return $sloDestinationUrl;
     }
