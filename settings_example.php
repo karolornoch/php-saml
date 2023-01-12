@@ -82,6 +82,7 @@ $settings = array(
         'entityId' => '',
         // SSO endpoint info of the IdP. (Authentication Request protocol)
         'singleSignOnService' => array(
+            'destinationUrl' => '',
             // URL Target of the IdP where the SP will send the Authentication Request Message
             'url' => '',
             // SAML protocol binding to be used when returning the <Response>
@@ -91,6 +92,7 @@ $settings = array(
         ),
         // SLO endpoint info of the IdP.
         'singleLogoutService' => array(
+            'destinationUrl' => '',
             // URL Location of the IdP where the SP will send the SLO Request
             'url' => '',
             // URL location of the IdP where the SP SLO Response will be sent (ResponseLocation)
