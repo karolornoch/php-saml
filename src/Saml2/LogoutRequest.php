@@ -129,7 +129,7 @@ class LogoutRequest
             $sessionIndexStr = isset($sessionIndex) ? "<samlp:SessionIndex>{$sessionIndex}</samlp:SessionIndex>" : "";
 
             $spEntityId = htmlspecialchars($spData['entityId'], ENT_QUOTES);
-            $destination = $this->_settings->getIdPSLOUrl();
+            $destinationUrl = $this->_settings->getIdPSLODestinationUrl();
             $logoutRequest = <<<LOGOUTREQUEST
 <samlp:LogoutRequest
     xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"
@@ -137,7 +137,7 @@ class LogoutRequest
     ID="{$id}"
     Version="2.0"
     IssueInstant="{$issueInstant}"
-    Destination="{$destination}">
+    Destination="{$destinationUrl}">
     <saml:Issuer>{$spEntityId}</saml:Issuer>
     {$nameIdObj}
     {$sessionIndexStr}
