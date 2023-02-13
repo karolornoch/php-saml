@@ -2,15 +2,13 @@
 /**
  * This file is part of php-saml.
  *
- * (c) OneLogin Inc
- *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @package OneLogin
- * @author  OneLogin Inc <saml-info@onelogin.com>
- * @license MIT https://github.com/onelogin/php-saml/blob/master/LICENSE
- * @link    https://github.com/onelogin/php-saml
+ * @author  Sixto Martin <sixto.martin.garcia@gmail.com>
+ * @license MIT https://github.com/SAML-Toolkits/php-saml/blob/master/LICENSE
+ * @link    https://github.com/SAML-Toolkits/php-saml
  */
 
 namespace OneLogin\Saml2;
@@ -20,7 +18,7 @@ use RobRichards\XMLSecLibs\XMLSecurityKey;
 use Exception;
 
 /**
- * Main class of OneLogin's PHP Toolkit
+ * Main class of SAML PHP Toolkit
  */
 class Auth
 {
@@ -168,13 +166,14 @@ class Auth
      * Initializes the SP SAML instance.
      *
      * @param array|null $settings Setting data
+     * @param bool $spValidationOnly if true, The library will only validate the SAML SP settings,
      *
      * @throws Exception
      * @throws Error
      */
-    public function __construct(array $settings = null)
+    public function __construct(array $settings = null, bool $spValidationOnly = false)
     {
-        $this->_settings = new Settings($settings);
+        $this->_settings = new Settings($settings, $spValidationOnly);
     }
 
     /**
